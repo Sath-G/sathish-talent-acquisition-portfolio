@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy: #0A0E1A;
+    --emerald: #10B981;
+    --glass: rgba(16, 185, 129, 0.05);
+    --glass-border: rgba(16, 185, 129, 0.2);
+    --glass-border-hover: rgba(16, 185, 129, 0.45);
+    --off-white: #F9FAFB;
+    --muted: #94A3B8;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+    background-color: var(--navy);
+    color: var(--off-white);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Frosted Glass Core Classes */
+.bg-grid {
+  background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 12px 40px -10px rgba(16, 185, 129, 0.2), 0 0 20px 0 rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+.glass-panel {
+  background: rgba(10, 14, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.glass-input {
+  background: rgba(10, 14, 26, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  border-color: #10B981;
+  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.3);
+}
+
+.stat-value {
+  font-family: 'Outfit', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  color: #10B981;
+  text-shadow: 0 0 24px rgba(16, 185, 129, 0.3);
+}
+
+.step-line {
+  position: relative;
+}
+
+.step-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--glass-border);
+  z-index: 0;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0E1A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* Ambient glow accents */
+.glow-emerald {
+  box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.25);
+}
+
+.glow-glass {
+  box-shadow: 0 8px 32px 0 rgba(16, 185, 129, 0.12), inset 0 0 0 1px rgba(16, 185, 129, 0.15);
+}
+
